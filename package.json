@@ -1,0 +1,26 @@
+{
+  "name": "blitzcranky",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.1.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "react": "^15.2.1",
+    "react-bootstrap": "^0.30.0",
+    "react-dom": "^15.2.1",
+    "request": "^2.74.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "main": "index.js",
+  "author": "Zachary Lester",
+  "license": "ISC"
+}
