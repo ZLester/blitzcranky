@@ -1,12 +1,13 @@
 .Nav {
+  margin: 20px 0px 0px 0px;
   z-index: 5;
 }
 
 .Nav-img {
   box-shadow: 1px 1px 1px rgb(0, 0, 0);
-  margin: 10px 5px 0px 10px;
+  margin: 10px 0px 0px 0px;
   display: block;
-  max-height: 8.5vh;
+  max-height: 8vh;
 }
 
 .Nav-img:hover {

@@ -5,8 +5,6 @@ import './Nav.css';
 const Nav = ({ champions, selected, handleChampionClick }) => {
   const images = champions.map((champion, index) => {
     const className = classNames({
-      img: true,
-      // 'img-responsive': true,
       'Nav-img': true,
       'Nav-img-selected': selected.id === champion.id,
     });
