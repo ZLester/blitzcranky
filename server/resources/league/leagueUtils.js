@@ -3,8 +3,6 @@ const League = require('./League');
 exports.addImageUrls = champion => {
   return Object.assign(
     champion,
-    League.retrieveChampionPicsByName(champion.name)
+    League.retrieveChampionPicsByKey(champion.key)
   );
 };
-
-exports.pluckIds = champion => champion.id;

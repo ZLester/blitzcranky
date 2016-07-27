@@ -1,0 +1,25 @@
+.Nav {
+  z-index: 5;
+}
+
+.Nav-img {
+  box-shadow: 1px 1px 1px rgb(0, 0, 0);
+  margin: 10px 5px 0px 10px;
+  display: block;
+  max-height: 8.5vh;
+}
+
+.Nav-img:hover {
+  cursor: pointer;
+  filter: brightness(50%);
+}
+
+.Nav-img-selected {
+  border: 2px solid black;
+  filter: brightness(50%);
+}
+
+.Nav-img-selected:hover {
+  border: 2px solid black;
+  filter: brightness(50%);
+}

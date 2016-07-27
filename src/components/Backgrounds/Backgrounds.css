@@ -1,0 +1,25 @@
+.Backgrounds {
+  height: 100%;
+  width: 100%;
+}
+
+.Backgrounds-img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: -2;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.Backgrounds-img-selected {
+  z-index: -1;
+  opacity: 1;
+}

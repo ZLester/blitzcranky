@@ -8,8 +8,10 @@
   "dependencies": {
     "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
+    "classnames": "^2.2.5",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
+    "path": "^0.12.7",
     "react": "^15.2.1",
     "react-bootstrap": "^0.30.0",
     "react-dom": "^15.2.1",
