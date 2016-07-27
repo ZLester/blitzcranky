@@ -1,11 +1,26 @@
+.Header {
+  margin-left: 10px;
+  text-overflow: clip;
+}
+
 .Header h1 {
   font-family: 'Playfair Display SC', serif;
   font-size: 72px;
-  color: white;
+  color: #FFF;
+  text-shadow: 1px 1px 4px #CFC;
 }
 
 .Header h3 {
   font-family: 'Playfair Display SC', serif; 
   font-size: 32px;
-  color: white;
+  color: #FFF;
+  margin: 0px;
+  text-shadow: 1px 1px 4px #CFC;
+}
+
+.Header h5 {
+  font-family: 'Playfair Display SC', serif; 
+  font-size: 16px;
+  color: #FFF;
+  text-shadow: 1px 1px 4px #CFC;
 }

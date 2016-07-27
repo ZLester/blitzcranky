@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Nav from '../Nav';
-import Backgrounds from '../Backgrounds';
 import Header from '../Header';
+import Abilities from '../Abilities';
+import Backgrounds from '../Backgrounds';
 import './App.css';
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.retrieveChampions();
+    this.retrieveChampions();
     this.setSelectNextChampionInterval();
   }
 
@@ -71,8 +72,13 @@ class App extends Component {
             handleChampionClick={this.handleChampionClick}
           />
         </Col>
-        <Col lg={4} md={4} sm={4} xs={4} >
-          <Header champion={this.state.selected} />
+        <Col lg={5} md={5} sm={5} xs={5} >
+          <Row height="50%">
+            <Header champion={this.state.selected} />
+          </Row>
+          <Row>
+            <Abilities champion={this.state.selected} />
+          </Row>
         </Col>
         <Backgrounds
           champions={this.state.champions}

@@ -1,3 +1,27 @@
 .Abilities {
-  
+  color: white;
+}
+
+.Abilities-title h3 {
+  font-family: 'Playfair Display SC', serif;
+}
+
+.Abilties-attack {
+  background: #F00;
+  height: 25px;
+}
+
+.Abilties-defense {
+  background: #00F;
+  height: 25px;
+}
+
+.Abilties-magic {
+  background: #F0F;
+  height: 25px;
+}
+
+.Abilties-difficulty {
+  background: #FF0;
+  height: 25px;
 }
