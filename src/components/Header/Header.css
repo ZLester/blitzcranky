@@ -5,7 +5,7 @@
 
 .Header h1 {
   font-family: 'Playfair Display SC', serif;
-  font-size: 72px;
+  font-size: 10vmin;
   color: #F00;
   text-shadow: 1px 2px 2px #600;
   font-weight: bold;
@@ -13,7 +13,7 @@
 
 .Header h3 {
   font-family: 'Playfair Display SC', serif; 
-  font-size: 32px;
+  font-size: 5vmin;
   color: #A00;
   margin: 0px;
   text-shadow: 1px 1px 2px #600;
@@ -22,7 +22,7 @@
 
 .Header h5 {
   font-family: 'Playfair Display SC', serif; 
-  font-size: 20px;
+  font-size: 3vmin;
   color: #FFF;
   font-weight: bold;
   text-shadow: 1px 1px 0px #666;
