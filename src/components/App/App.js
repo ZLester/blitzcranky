@@ -73,7 +73,7 @@ class App extends Component {
           />
         </Col>
         <Col lg={5} md={5} sm={5} xs={5} >
-          <Row height="50%">
+          <Row>
             <Header champion={this.state.selected} />
           </Row>
           <Row>
