@@ -1,6 +1,5 @@
 const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
-const { LEAGUE_API_KEY } = require('../../config');
 
 class League {
   constructor(api_key) {
@@ -36,4 +35,4 @@ class League {
   }
 }
 
-module.exports = new League(LEAGUE_API_KEY);
+module.exports = new League();
