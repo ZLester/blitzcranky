@@ -19,6 +19,9 @@
     "request": "^2.74.0",
     "tinycolor2": "^1.4.1"
   },
+  "engines": {
+    "node": "6.2.0"
+  },
   "scripts": {
     "start": "node server/",
     "dev": "react-scripts start",
