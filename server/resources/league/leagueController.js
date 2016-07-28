@@ -1,5 +1,5 @@
 const League = require('./League');
-const { addImageUrls } = require('./leagueUtils.js');
+const { addImageUrls, getChampionColors } = require('./leagueUtils.js');
 
 exports.retrieveChampions = (req, res) => {
   League.retrieveFreeChampions()
@@ -9,6 +9,11 @@ exports.retrieveChampions = (req, res) => {
     })
     .then(championRequests => Promise.all(championRequests))
     .then(champions => champions.map(addImageUrls))
+    .then(champions => {
+      const colorRequests = champions.map(champion => getChampionColors(champion));
+      return Promise.all(colorRequests)
+        .then(colors => colors.map((color, index) => Object.assign({}, { colors: color }, champions[index])));
+    })
     .then(champions => res.json(champions))
     .catch(err => res.status(500).json({ error: err.message }));
 };
