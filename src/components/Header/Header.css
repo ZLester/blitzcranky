@@ -6,24 +6,25 @@
 .Header h1 {
   font-family: 'Playfair Display SC', serif;
   font-size: 10vmin;
-  color: #F00;
-  text-shadow: 1px 2px 2px #600;
+  color: #ffffcc;
+  text-shadow: 1px 2px 2px #ffff99;
   font-weight: bold;
 }
 
 .Header h3 {
   font-family: 'Playfair Display SC', serif; 
   font-size: 5vmin;
-  color: #A00;
+  color: #ffff66;
   margin: 0px;
-  text-shadow: 1px 1px 2px #600;
-  font-weight: bold;
+  text-shadow: 1px 1px 2px #ffff99;
+  font-weight: bold; 
+  font-style: italic;
 }
 
 .Header h5 {
   font-family: 'Playfair Display SC', serif; 
   font-size: 3vmin;
-  color: #FFF;
+  color: #ffffcc;
   font-weight: bold;
-  text-shadow: 1px 1px 0px #666;
+  text-shadow: 1px 1px 0px #ffff99;
 }

@@ -6,22 +6,99 @@
   font-family: 'Playfair Display SC', serif;
 }
 
-.Abilties-attack {
-  background: #F00;
-  height: 25px;
+.Abilities-label {
+  position: absolute;
+  margin: 1vmin 0 0 3vmin;
+  color: #ffffcc;
+  text-shadow: 1px 1px 1px #ffff99;
+  /*font-weight: bold;*/
 }
 
-.Abilties-defense {
-  background: #00F;
-  height: 25px;
+.Abilities-unit-container {
+  height: 3vmin;
+  margin-left: 15vmin;
+  vertical-align: middle;
+  border: 2px solid #a78735;
+  border-radius: 4px;
+  width: 50%;
+  position: absolute;
+  margin-top: 1vmin;
 }
 
-.Abilties-magic {
-  background: #F0F;
-  height: 25px;
+.Abilities-unit-container-underlay {
+  background: #000;
+  z-index: -1;
 }
 
-.Abilties-difficulty {
-  background: #FF0;
-  height: 25px;
+.Abilities-unit-container-overlay {
+  background: repeating-linear-gradient(to right, transparent 0, transparent 8.7%, #a78735, #a78735 10%);
+  z-index: 1;
+}
+
+.Abilities-unit {
+  height: 3vmin;
+  position: absolute;
+  margin-left: 15vmin;
+  transition: width 2s ease-in-out;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-size: 100%;
+  margin-top: 1vmin;
+  padding: 0px;
+}
+
+.Abilities-unit-attack {
+  background: linear-gradient(to right, #320000 0,#980000 100%) left center no-repeat;
+}
+
+.Abilities-unit-defense {
+  background: linear-gradient(to right, #164729 0,#2e9555 100%) left center no-repeat;
+}
+
+.Abilities-unit-magic {
+  background: linear-gradient(to right, #012e40 0,#0377a4 100%) left center no-repeat;
+}
+
+.Abilities-unit-difficulty {
+  background: linear-gradient(to right, #4c3a60 0,#7f619f 100%) left center no-repeat;
+}
+
+.Abilities-unit-length-1 {
+  width: 5.5%;
+}
+
+.Abilities-unit-length-2 {
+  width: 10.5%;
+}
+
+.Abilities-unit-length-3 {
+  width: 15.5%;
+}
+
+.Abilities-unit-length-4 {
+  width: 20.4%;
+}
+
+.Abilities-unit-length-5 {
+  width: 25%;
+}
+
+.Abilities-unit-length-6 {
+  width: 30%;
+}
+
+.Abilities-unit-length-7 {
+  width: 35%;
+}
+
+.Abilities-unit-length-8 {
+  width: 40%;
+}
+
+.Abilities-unit-length-9 {
+  width: 45%;
+}
+
+.Abilities-unit-length-10 {
+  width: 50%;
 }

@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   handleChampionClick(selected) {
-    this.resetSelectNextChampionInterval();
+    // this.resetSelectNextChampionInterval();
     this.selectChampion(selected);
   }
 
