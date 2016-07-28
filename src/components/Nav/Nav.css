@@ -1,11 +1,11 @@
 .Nav {
-  margin: 20px 0px 0px 0px;
+  margin: 2vh 0 0 0;
   z-index: 5;
 }
 
 .Nav-img {
   box-shadow: 1px 1px 1px rgb(0, 0, 0);
-  margin: 10px 0px 0px 0px;
+  margin: 1.5vh 0 0 0;
   display: block;
   max-height: 8vh;
 }
