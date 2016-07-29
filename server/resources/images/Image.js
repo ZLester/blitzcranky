@@ -10,14 +10,9 @@ class Image {
   }
   getTextColorsByHex(hex) {
     const result = {};
-    const isDark = tinycolor(hex).isDark();
-    if (isDark) {
-      result.title = tinycolor(hex).complement().lighten(40).toHexString();
-    } else {
-      result.title = tinycolor(hex).complement().darken(40).toHexString();
-    }
-    result.subtitle = result.titleShadow;
-    result.role = tinycolor(result.title).lighten().toHexString();
+    result.title = tinycolor(hex).complement().lighten(20).saturate(30).toHexString();
+    result.subtitle = tinycolor(hex).lighten(20).saturate(30).toHexString();
+    result.role = tinycolor(hex).complement().lighten(20).toHexString();
     return result;
   }
   getTextColorsByPath(path) {
@@ -32,14 +27,12 @@ class Image {
       let count = 0;
       this.readImageByPath(path)
         .then(image => {
-          const quarterWidth = Math.floor(0.25 * image.bitmap.width);
-          const quarterHeight = Math.floor(0.25 * image.bitmap.height);
-          image.scan(0, 0, quarterWidth, quarterHeight, (x, y, idx) => {
+          image.scan(0, 0, image.bitmap.width, image.bitmap.height, (x, y, idx) => {
             red += image.bitmap.data[idx + 0];
             green += image.bitmap.data[idx + 1];
             blue += image.bitmap.data[idx + 2];
             count++;
-            if (x === quarterWidth - 1 && y === quarterHeight - 1) {
+            if (x === image.bitmap.width - 1 && y === image.bitmap.height - 1) {
               const averageRed = Math.floor(red / count);
               const averageGreen = Math.floor(green / count);
               const averageBlue = Math.floor(blue / count);
