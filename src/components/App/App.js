@@ -28,13 +28,13 @@ class App extends Component {
   }
 
   retrieveChampions() {
-    fetch('/api/league/champions')
+    fetch('/api/champions')
       .then(res => res.json())
       .then(champions => this.setState({ champions }));
   }
 
   handleChampionClick(selected) {
-    // this.resetSelectNextChampionInterval();
+    this.resetSelectNextChampionInterval();
     this.selectChampion(selected);
   }
 
