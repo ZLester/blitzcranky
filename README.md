@@ -7,4 +7,4 @@
 - Node 6.2.x
 - Express 4.x
 
-> Note: You have to create an app in the [Uber Developers Dahsboard](https://developer.uber.com/dashboard) first. Grant the new app all access rights and set the callback URL to ``http://localhost:3000/api/auth/callback``.
+> Note: To run the app locally you need to obtain a key from the [Riot Developer's API](https://developer.riotgames.com/) first. The app expects your API key to be found as the environment variable `LEAGUE_API_KEY`
