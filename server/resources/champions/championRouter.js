@@ -14,4 +14,4 @@ championRouter.route('/:id')
   .put(championController.updateOne)
   .delete(championController.deleteOne);
 
-module.exports = pokemonRouter;
+module.exports = championRouter;

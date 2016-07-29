@@ -16,7 +16,7 @@ const championSchema = new mongoose.Schema({
   lore: String,
   blurb: String,
   tags: [{
-    type: Number,
+    type: String,
   }],
   info: {
     attack: String,

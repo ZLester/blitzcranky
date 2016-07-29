@@ -1,27 +1,27 @@
 const Champion = require('./Champion');
 
-exports.createOne = (req, res, next) => {
+exports.createOne = (req, res) => {
   const newChampion = req.body;
   Champion.create(newChampion)
     .then(champion => res.json(champion))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-exports.retrieve = (req, res, next) => {
+exports.retrieve = (req, res) => {
   const query = req.query;
   Champion.find(query)
     .then(champions => res.json(champions))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-exports.retrieveOne = (req, res, next) => {
+exports.retrieveOne = (req, res) => {
   const id = req.params.id;
   Champion.findById(id)
     .then(champion => res.json(champion))
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-exports.updateOne = (req, res, next) => {
+exports.updateOne = (req, res) => {
   const id = req.params.id;
   const updatedProps = req.body;
   const options = { upsert: true };
@@ -30,7 +30,7 @@ exports.updateOne = (req, res, next) => {
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-exports.delete = (req, res, next) => {
+exports.delete = (req, res) => {
   const query = req.query;
   Champion.find(query)
     .then(champions => Promise.all([champions, Champion.remove(query)]))
@@ -38,7 +38,7 @@ exports.delete = (req, res, next) => {
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
-exports.deleteOne = (req, res, next) => {
+exports.deleteOne = (req, res) => {
   const id = req.params.id;
   Champion.findByIdAndRemove(id)
     .then(champion => res.json(champion))
