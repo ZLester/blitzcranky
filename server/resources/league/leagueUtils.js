@@ -9,5 +9,5 @@ exports.addImageUrls = champion => {
 };
 
 exports.getChampionColors = champion => {
-  return Image.getTextColorsByPath(champion.icon);
+  return Image.getTextColorsByPath(champion.background);
 };

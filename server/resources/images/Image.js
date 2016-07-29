@@ -12,16 +12,12 @@ class Image {
     const result = {};
     const isDark = tinycolor(hex).isDark();
     if (isDark) {
-      result.title = tinycolor(hex).lighten(20).complement().toHexString();
-      result.titleShadow = tinycolor(result.title).darken().toString();
+      result.title = tinycolor(hex).complement().lighten(40).toHexString();
     } else {
-      result.title = tinycolor(hex).darken(20).toString();
-      result.titleShadow = tinycolor(result.title).darken().toString();
+      result.title = tinycolor(hex).complement().darken(40).toHexString();
     }
-    result.subtitle = tinycolor(result.titleShadow).darken().toString();
-    result.subtitleShadow = tinycolor(result.subtitle).darken().toString();
-    result.role = tinycolor(result.title).complement().toHexString();
-    result.roleShadow = tinycolor(result.role).darken().toString();
+    result.subtitle = result.titleShadow;
+    result.role = tinycolor(result.title).lighten().toHexString();
     return result;
   }
   getTextColorsByPath(path) {
@@ -36,16 +32,19 @@ class Image {
       let count = 0;
       this.readImageByPath(path)
         .then(image => {
-          image.scan(0, 0, image.bitmap.width, image.bitmap.height, (x, y, idx) => {
+          const quarterWidth = Math.floor(0.25 * image.bitmap.width);
+          const quarterHeight = Math.floor(0.25 * image.bitmap.height);
+          image.scan(0, 0, quarterWidth, quarterHeight, (x, y, idx) => {
             red += image.bitmap.data[idx + 0];
             green += image.bitmap.data[idx + 1];
             blue += image.bitmap.data[idx + 2];
             count++;
-            if (x === image.bitmap.width - 1 && y === image.bitmap.height - 1) {
+            if (x === quarterWidth - 1 && y === quarterHeight - 1) {
               const averageRed = Math.floor(red / count);
               const averageGreen = Math.floor(green / count);
               const averageBlue = Math.floor(blue / count);
               const averageHex = this.convertRGBtoHex(averageRed, averageGreen, averageBlue);
+              console.log('done!', averageHex);
               resolve(averageHex);
             }
           });

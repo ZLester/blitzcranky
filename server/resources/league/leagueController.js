@@ -12,7 +12,7 @@ exports.retrieveChampions = (req, res) => {
     .then(champions => {
       const colorRequests = champions.map(champion => getChampionColors(champion));
       return Promise.all(colorRequests)
-        .then(colors => colors.map((color, index) => Object.assign({}, { colors: color }, champions[index])));
+        .then(colorsList => colorsList.map((colors, index) => Object.assign({}, champions[index], { colors })));
     })
     .then(champions => res.json(champions))
     .catch(err => res.status(500).json({ error: err.message }));
