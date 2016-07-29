@@ -1,5 +1,8 @@
 const championRouter = require('express').Router();
 const championController = require('./championController');
+const { validateId } = require('./championUtils');
+
+championRouter.param('id', validateId);
 
 championRouter.route('/')
   .post(championController.createOne)

@@ -2,58 +2,30 @@ const mongoose = require('mongoose');
 
 const championSchema = new mongoose.Schema({
   colors: {
-    title: { 
-      type: String,
-    },
-    subtitle: { 
-      type: String,
-    },
-    role: { 
-      type: String,
-    },
+    title: String,
+    subtitle: String,
+    role: String,
   },
   id: {
     type: Number,
     unique: true,
   },
-  key: { 
-    type: String,
-  },
-  name: {
-    type: String,
-  },
-  title: {
-    type: String,
-  },
-  lore: {
-    type: String,
-  },
-  blurb: {
-    type: String,
-  }
+  key: String,
+  name: String,
+  title: String,
+  lore: String,
+  blurb: String,
   tags: [{
-    type: String,
+    type: Number,
   }],
   info: {
-    attack: {
-      type: Number,
-    },
-    defense: { 
-      type: Number,
-    },
-    magic: {
-      type: Number,
-    },
-    difficulty: {
-      type: Number,
-    },
+    attack: String,
+    defense: Number,
+    magic: String,
+    difficulty: String,
   },
-  icon: {
-    type: String,
-  },
-  background: {
-    type: String,
-  }
+  icon: String,
+  background: String,
 });
 
 module.exports = mongoose.model('Champion', championSchema);
