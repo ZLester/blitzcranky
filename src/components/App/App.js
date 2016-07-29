@@ -10,10 +10,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      champions: props.stubs,
-      selected: props.stubs[0],
+      champions: [],
+      selected: null,
     };
     this.retrieveChampions = this.retrieveChampions.bind(this);
+    this.retrieveStubChampions = this.retrieveStubChampions.bind(this);
     this.handleChampionClick = this.handleChampionClick.bind(this);
     this.selectChampion = this.selectChampion.bind(this);
     this.selectNextChampion = this.selectNextChampion.bind(this);
@@ -24,13 +25,27 @@ class App extends Component {
 
   componentDidMount() {
     this.retrieveChampions();
+    // this.retrieveStubChampions();
+  }
+
+  retrieveStubChampions() {
+    this.setState({ 
+      champions: this.props.stubs,
+      selected: this.props.stubs[0],
+    });
     this.setSelectNextChampionInterval();
   }
 
   retrieveChampions() {
     fetch('/api/champions')
       .then(res => res.json())
-      .then(champions => this.setState({ champions }));
+      .then(champions => {
+        this.setState({ 
+          champions,
+          selected: champions[0],
+        });
+        this.setSelectNextChampionInterval();
+      });
   }
 
   handleChampionClick(selected) {
@@ -62,28 +77,40 @@ class App extends Component {
     this.setSelectNextChampionInterval();
   }
 
-  render() {
-    return (
-      <div className="App">
-        <Col lg={1} md={1} sm={1} xs={1} >
-          <Nav
+  getContent() {
+    if (this.state.selected) {
+      return (
+        <div>
+          <Col lg={1} md={1} sm={1} xs={1} >
+            <Nav
+              champions={this.state.champions}
+              selected={this.state.selected}
+              handleChampionClick={this.handleChampionClick}
+            />
+          </Col>
+          <Col lg={5} md={5} sm={5} xs={5} >
+            <Row>
+              <Header champion={this.state.selected} />
+            </Row>
+            <Row>
+              <Abilities champion={this.state.selected} />
+            </Row>
+          </Col>
+          <Backgrounds
             champions={this.state.champions}
             selected={this.state.selected}
-            handleChampionClick={this.handleChampionClick}
           />
-        </Col>
-        <Col lg={5} md={5} sm={5} xs={5} >
-          <Row>
-            <Header champion={this.state.selected} />
-          </Row>
-          <Row>
-            <Abilities champion={this.state.selected} />
-          </Row>
-        </Col>
-        <Backgrounds
-          champions={this.state.champions}
-          selected={this.state.selected}
-        />
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+  render() {
+    const content = this.getContent();
+    return (
+      <div className="App">
+        {content}
       </div>
     );
   }

@@ -2,20 +2,31 @@
   color: white;
 }
 
+.Abilities h5 {
+  position: absolute;
+  top: 70vmin;
+  left: 13vmin;
+  font-family: 'Playfair Display SC', serif; 
+  font-size: 3vmin;
+  font-weight: bold;
+  color: #ffffcc;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.9);
+}
+
 .Abilities-title h3 {
   font-family: 'Playfair Display SC', serif;
 }
 
 .Abilities-label {
   position: absolute;
-  margin: 1vmin 0 0 3vmin;
+  margin: 1vmin 0 0 0vmin;
   color: #ffffcc;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.8);
 }
 
 .Abilities-unit-container {
   height: 3vmin;
-  margin-left: 15vmin;
+  margin-left: 12vmin;
   vertical-align: middle;
   border: 2px solid #a78735;
   border-radius: 4px;
@@ -37,7 +48,7 @@
 .Abilities-unit {
   height: 3vmin;
   position: absolute;
-  margin-left: 15vmin;
+  margin-left: 12vmin;
   transition: width 2s ease-in-out;
   border: 2px solid transparent;
   border-radius: 4px;

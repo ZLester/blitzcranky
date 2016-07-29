@@ -3,12 +3,13 @@ import { Col, Row } from 'react-bootstrap';
 import './Abilities.css';
 
 const Abilities = ({ champion }) => {
+  const tags = champion.tags.reduce((results, tag) => `${results}, ${tag}`);
   const categories = Object.keys(champion.info);
   const abilitiesGraph = categories.map((category, index) => {
     const score = champion.info[category];
     const label = category[0].toUpperCase() + category.slice(1);
     const unitClassNames = `Abilities-unit Abilities-unit-${category} Abilities-unit-length-${score}`;
-    const top = `${30 + index * 4}vmin`;
+    const top = `${55 + index * 4}vmin`;
     return (
       <Col key={index} lg={12} md={12} sm={12}>
         <span className="Abilities-label" style={{ top }} >{label}</span>
@@ -27,6 +28,7 @@ const Abilities = ({ champion }) => {
   });
   return (
     <Row className="Abilities">
+      <h5 className="Abilities-tags">{tags}</h5>
       {abilitiesGraph}
     </Row>
   );
