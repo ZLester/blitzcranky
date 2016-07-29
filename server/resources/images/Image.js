@@ -5,9 +5,11 @@ class Image {
   convertRGBtoHex(r, g, b) {
     return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
   }
+
   readImageByPath(path) {
     return Jimp.read(path);
   }
+
   getTextColorsByHex(hex) {
     const result = {};
     result.title = tinycolor(hex).complement().lighten(20).saturate(30).toHexString();
@@ -15,10 +17,12 @@ class Image {
     result.role = tinycolor(hex).complement().lighten(20).toHexString();
     return result;
   }
+
   getTextColorsByPath(path) {
     return this.getAverageColorByPath(path)
       .then(hex => this.getTextColorsByHex(hex));
   }
+
   getAverageColorByPath(path) {
     return new Promise((resolve, reject) => {
       let red = 0;
@@ -37,7 +41,6 @@ class Image {
               const averageGreen = Math.floor(green / count);
               const averageBlue = Math.floor(blue / count);
               const averageHex = this.convertRGBtoHex(averageRed, averageGreen, averageBlue);
-              console.log('done!', averageHex);
               resolve(averageHex);
             }
           });
@@ -47,6 +50,7 @@ class Image {
         });
     });
   }
+  
 }
 
 module.exports = new Image();

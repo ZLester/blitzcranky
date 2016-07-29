@@ -7,6 +7,7 @@ championRouter.param('id', validateId);
 championRouter.route('/')
   .post(championController.createOne)
   .get(championController.retrieve)
+  .put(championController.update)
   .delete(championController.delete);
 
 championRouter.route('/:id')
