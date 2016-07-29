@@ -1,6 +1,6 @@
 const app = require('./server');
-const port = process.env.PORT || 3000;
+const { PORT } = require('./config');
 
-app.listen(port, () => {
-  console.log(`Blitzcranky listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Blitzcranky listening on port ${PORT}`);
 });
