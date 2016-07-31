@@ -1,7 +1,7 @@
-// const mongoose = require('mongoose');
-// mongoose.Promise = require('bluebird');
-// const { DB_URI } = require('../config');
+const bluebird = require('bluebird');
+const redis = require('redis');
+bluebird.promisifyAll(redis.RedisClient.prototype);
+const { REDIS_URL } = require('../config');
+const client = redis.createClient(REDIS_URL);
 
-// const connection = mongoose.connect(DB_URI);
-
-// module.exports = connection;
+module.exports = client;
