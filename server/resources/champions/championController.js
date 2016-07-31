@@ -1,8 +1,18 @@
 const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
+const logger = require('winston');
 
 const championStore = {
   champions: [],
+};
+
+const seedChampions = () => {
+  return request.getAsync(`https://blitzcranky-champion.herokuapp.com/api/champions`)
+    .then(response => JSON.parse(response.body))
+    .then(champions => {
+      championStore.champions = champions;
+      return champions;
+    });
 };
 
 exports.retrieve = (req, res) => {
@@ -10,11 +20,11 @@ exports.retrieve = (req, res) => {
 };
 
 exports.update = (req, res) => {
-  request.getAsync(`https://blitzcranky-champion.herokuapp.com`)
-    .then(response => JSON.parse(response.body))
-    .then(champions => {
-      championStore.champions = champions;
-      res.status(201).json(champions);
-    })
+  seedChampions()
+    .then(champions => res.status(201).json(champions))
     .catch(err => res.status(500).json({ error: err.message }));
 };
+
+seedChampions()
+  .then(() => logger.info('Champions seeded.'))
+  .catch(() => logger.error('Error seeding champions.'));
