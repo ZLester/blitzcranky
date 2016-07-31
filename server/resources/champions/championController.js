@@ -16,9 +16,9 @@ exports.update = (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }));
 };
 
+// Retrieve Champions from Champion Service and seed Redis DB
 Champion.delete()
   .then(() => seedChampions())
   .then(champions => Champion.create(champions))
-  .then(champions => logger.info(champions))
-  .then(() => logger.info('Champions seeded.'))
+  .then(() => logger.info('Champions seeded successfully.'))
   .catch(() => logger.error('Error seeding champions.'));
