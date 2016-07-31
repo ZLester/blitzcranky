@@ -8,11 +8,11 @@ if (cluster.isMaster) {
   });
 
   cluster.on('online', worker => {
-    logger.info(`Worker ${worker.id} started.`);
+    logger.info(`Blitzcranky Static Server ${worker.id} started.`);
   });
 
   cluster.on('exit', (worker, code) => {
-    logger.warn(`Worker ${worker.id} died with code ${code}. Restarting new worker.`);
+    logger.warn(`Blitzcranky Static Server ${worker.id} died with code ${code}. Restarting new worker.`);
     cluster.fork();
   });
 } else {
