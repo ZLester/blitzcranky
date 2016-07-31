@@ -1,10 +1,11 @@
 # Blitzcranky Static Server Cluster/React Client
 Visualizer for the latest League of Legends weekly free champion rotation
 
-## Components
-- [Static Server Cluster/React Client](https://github.com/zlester/blitzcranky)
-- [Champion Service](https://github.com/zlester/blitzcranky-champion)
-- [Update Service/Job Scheduler](https://github.com/zlester/blitzcranky-worker)
+## Services
+Blitzcranky is made up of multiple services, including:
+- [Static Server Cluster/React Client](https://github.com/zlester/blitzcranky): A Node/Express Server Server Cluster for serving Blitzcranky's SPA. The server retrieves champions from the Champion Service and stores them in a Redis database.
+- [Champion Service](https://github.com/zlester/blitzcranky-champion): A Node/Express Service that retrieves the free weekly champion rotation rotation and stores it in a MongoDB database.
+- [Update Service/Job Scheduler](https://github.com/zlester/blitzcranky-worker): A Node/Express Worker that manages updating the Champion Service and Static Server Cluster. 
 
 ## Usage
 `npm install`
