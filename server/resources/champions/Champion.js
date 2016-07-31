@@ -1,14 +1,15 @@
-const client = require('../../db');
+const db = require('../../db');
 
 class Champion {
   create(champions) {
-    return client.setAsync('champions', JSON.stringify(champions));
+    return db.setAsync('champions', JSON.stringify(champions));
   }
   retrieve() {
-    return client.getAsync('champions');
+    return db.getAsync('champions')
+      .then(raw => JSON.parse(raw));
   }
   delete() {
-    return client.delAsync('champions');
+    return db.delAsync('champions');
   }
 }
 

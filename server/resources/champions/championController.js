@@ -4,7 +4,6 @@ const { seedChampions } = require('./championUtils');
 
 exports.retrieve = (req, res) => {
   Champion.retrieve()
-    .then(raw => JSON.parse(raw))
     .then(champions => res.json(champions))
     .catch(err => res.status(500).json({ error: err.message }));
 };
