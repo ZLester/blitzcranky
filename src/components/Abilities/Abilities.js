@@ -7,12 +7,12 @@ const Abilities = ({ champion }) => {
   const categories = Object.keys(champion.info);
   const abilitiesGraph = categories.map((category, index) => {
     const score = champion.info[category];
-    const label = category[0].toUpperCase() + category.slice(1);
+    const labelClassNames = `Abilities-label Abilities-label-${category}`;
     const unitClassNames = `Abilities-unit Abilities-unit-${category} Abilities-unit-length-${score}`;
-    const top = `${55 + index * 4}vmin`;
+    const top = `${index * 4}vmin`;
     return (
       <Col key={index} lg={12} md={12} sm={12}>
-        <span className="Abilities-label" style={{ top }} >{label}</span>
+        <div className={labelClassNames} style={{ top }} ></div>
         <Row style={{ top }}
           className="Abilities-unit-container Abilities-unit-container-overlay"
         />
@@ -27,7 +27,7 @@ const Abilities = ({ champion }) => {
     );
   });
   return (
-    <Row className="Abilities">
+    <Row style={{ marginTop: '52vh'}} className="Abilities">
       <h5 className="Abilities-tags">{tags}</h5>
       {abilitiesGraph}
     </Row>

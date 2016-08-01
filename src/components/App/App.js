@@ -13,8 +13,6 @@ class App extends Component {
       champions: [],
       selected: null,
     };
-    this.retrieveChampions = this.retrieveChampions.bind(this);
-    this.retrieveStubChampions = this.retrieveStubChampions.bind(this);
     this.handleChampionClick = this.handleChampionClick.bind(this);
     this.selectChampion = this.selectChampion.bind(this);
     this.selectNextChampion = this.selectNextChampion.bind(this);
@@ -40,7 +38,7 @@ class App extends Component {
     fetch('/api/champions')
       .then(res => res.json())
       .then(champions => {
-        this.setState({ 
+        this.setState({
           champions,
           selected: champions[0],
         });
@@ -77,22 +75,20 @@ class App extends Component {
     this.setSelectNextChampionInterval();
   }
 
-  getContent() {
+  getPageContent() {
     if (this.state.selected) {
       return (
         <div>
-          <Col lg={1} md={1} sm={1} xs={1} >
+          <Col lg={1} md={1} sm={1} xs={3} >
             <Nav
               champions={this.state.champions}
               selected={this.state.selected}
               handleChampionClick={this.handleChampionClick}
             />
           </Col>
-          <Col lg={5} md={5} sm={5} xs={5} >
+          <Col lg={11} md={11} sm={10} xs={9} >
             <Row>
               <Header champion={this.state.selected} />
-            </Row>
-            <Row>
               <Abilities champion={this.state.selected} />
             </Row>
           </Col>
@@ -102,15 +98,14 @@ class App extends Component {
           />
         </div>
       );
-    } else {
-      return null;
     }
+    return null;
   }
   render() {
-    const content = this.getContent();
+    const pageContent = this.getPageContent();
     return (
       <div className="App">
-        {content}
+        {pageContent}
       </div>
     );
   }

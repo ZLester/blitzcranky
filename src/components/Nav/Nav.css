@@ -4,10 +4,14 @@
 }
 
 .Nav-img {
-  box-shadow: 1px 1px 1px rgb(0, 0, 0);
+  box-shadow: 1px 1px 4px rgb(0, 0, 0);
   margin: 1.5vh 0 0 0;
   display: block;
   max-height: 8vh;
+  -webkit-transition: filter 200ms ease-in-out;
+  -moz-transition: filter 200ms ease-in-out;
+  -o-transition: filter 200ms ease-in-out;
+  transition: filter 200ms ease-in-out;
 }
 
 .Nav-img:hover {

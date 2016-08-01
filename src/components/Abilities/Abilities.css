@@ -3,14 +3,12 @@
 }
 
 .Abilities h5 {
-  position: absolute;
-  top: 70vmin;
-  left: 13vmin;
   font-family: 'Playfair Display SC', serif; 
   font-size: 3vmin;
   font-weight: bold;
   color: #ffffcc;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.9);
+  margin-left: 7vmin;
 }
 
 .Abilities-title h3 {
@@ -19,20 +17,37 @@
 
 .Abilities-label {
   position: absolute;
-  margin: 1vmin 0 0 0vmin;
-  color: #ffffcc;
-  text-shadow: 1px 1px 0px rgba(0,0,0,0.8);
+  height: 3vmin;
+  width: 3.2vmin;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.Abilities-label-attack {
+  background-image: url("http://vignette2.wikia.nocookie.net/leagueoflegends/images/0/06/Attackpower.png");
+}
+
+.Abilities-label-defense {
+  background-image: url("http://vignette1.wikia.nocookie.net/leagueoflegends/images/1/1e/Defensepower.png");
+}
+
+.Abilities-label-magic {
+  background-image: url("http://vignette3.wikia.nocookie.net/leagueoflegends/images/5/50/Abilitypower.png");
+}
+
+.Abilities-label-difficulty {
+  background-image: url("http://vignette2.wikia.nocookie.net/leagueoflegends/images/a/a5/Difficulty.png");
 }
 
 .Abilities-unit-container {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
   height: 3vmin;
-  margin-left: 12vmin;
+  margin-left: 4vmin;
   vertical-align: middle;
   border: 2px solid #a78735;
   border-radius: 4px;
-  width: 50%;
+  width: 25%;
   position: absolute;
-  margin-top: 1vmin;
 }
 
 .Abilities-unit-container-underlay {
@@ -41,19 +56,19 @@
 }
 
 .Abilities-unit-container-overlay {
-  background: repeating-linear-gradient(to right, transparent 0, transparent 8.7%, #a78735, #a78735 10%);
+  background: repeating-linear-gradient(to right, transparent 0, transparent 8.8%, #a78735, #a78735 10%);
   z-index: 1;
 }
 
 .Abilities-unit {
+
   height: 3vmin;
   position: absolute;
-  margin-left: 12vmin;
+  margin-left: 4vmin;
   transition: width 2s ease-in-out;
   border: 2px solid transparent;
   border-radius: 4px;
   background-size: 100%;
-  margin-top: 1vmin;
   padding: 0px;
 }
 
@@ -74,41 +89,41 @@
 }
 
 .Abilities-unit-length-1 {
-  width: 5.5%;
+  width: 2.5%;
 }
 
 .Abilities-unit-length-2 {
-  width: 10.5%;
+  width: 5%;
 }
 
 .Abilities-unit-length-3 {
-  width: 15.5%;
+  width: 7.5%;
 }
 
 .Abilities-unit-length-4 {
-  width: 20.4%;
+  width: 10%;
 }
 
 .Abilities-unit-length-5 {
-  width: 25%;
+  width: 12.5%;
 }
 
 .Abilities-unit-length-6 {
-  width: 30%;
+  width: 15%;
 }
 
 .Abilities-unit-length-7 {
-  width: 35%;
+  width: 17.5%;
 }
 
 .Abilities-unit-length-8 {
-  width: 40%;
+  width: 20%;
 }
 
 .Abilities-unit-length-9 {
-  width: 45%;
+  width: 22.5%;
 }
 
 .Abilities-unit-length-10 {
-  width: 50%;
+  width: 25%;
 }
