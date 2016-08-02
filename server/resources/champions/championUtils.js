@@ -1,7 +1,16 @@
+const Champion = require('./Champion');
 const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
+const logger = require('winston');
+const { CHAMPIONS_URI } = require('../../config');
 
 exports.seedChampions = () => (
-  request.getAsync(`https://blitzcranky-champion.herokuapp.com/api/champions`)
+  Champion.delete()
+    .then(() => request.getAsync(CHAMPIONS_URI))
     .then(response => JSON.parse(response.body))
+    .then(champions => Champion.create(champions))
 );
+
+exports.seedChampions()
+  .then(() => logger.info('Champions seeded successfully.'))
+  .catch(err => logger.error(`Error seeding champions: ${err.message}`));

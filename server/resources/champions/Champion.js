@@ -2,14 +2,17 @@ const db = require('../../db');
 
 class Champion {
   create(champions) {
-    return db.setAsync('champions', JSON.stringify(champions));
+    return Promise.all(
+      champions.map(champion =>
+        db.lpushAsync('champions', JSON.stringify(champion)))
+    );
   }
   retrieve() {
-    return db.getAsync('champions')
-      .then(raw => JSON.parse(raw));
+    return db.lrangeAsync('champions', 0, 9)
+      .then(champions => champions.map(JSON.parse));
   }
   delete() {
-    return db.delAsync('champions');
+    return db.ltrimAsync('champions', 1, 0);
   }
 }
 
