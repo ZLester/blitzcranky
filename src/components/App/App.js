@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   retrieveStubChampions() {
-    this.setState({ 
+    this.setState({
       champions: this.props.stubs,
       selected: this.props.stubs[0],
     });
@@ -79,14 +79,14 @@ class App extends Component {
     if (this.state.selected) {
       return (
         <div>
-          <Col lg={1} md={1} sm={1} xs={3} >
+          <Col lg={1} md={1} sm={1} xs={1} >
             <Nav
               champions={this.state.champions}
               selected={this.state.selected}
               handleChampionClick={this.handleChampionClick}
             />
           </Col>
-          <Col lg={11} md={11} sm={10} xs={9} >
+          <Col lg={10} md={10} sm={10} xs={10} >
             <Row>
               <Header champion={this.state.selected} />
               <Abilities champion={this.state.selected} />
@@ -101,6 +101,7 @@ class App extends Component {
     }
     return null;
   }
+
   render() {
     const pageContent = this.getPageContent();
     return (

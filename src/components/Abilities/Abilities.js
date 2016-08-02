@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import './Abilities.css';
 
 const Abilities = ({ champion }) => {
-  const tags = champion.tags.reduce((results, tag) => `${results}, ${tag}`);
+  const tags = champion.tags.reduce((results, tag) => `${results}/${tag}`);
   const categories = Object.keys(champion.info);
   const abilitiesGraph = categories.map((category, index) => {
     const score = champion.info[category];
@@ -22,12 +22,11 @@ const Abilities = ({ champion }) => {
         <Row style={{ top }}
           className={unitClassNames}
         />
-
       </Col>
     );
   });
   return (
-    <Row style={{ marginTop: '52vh'}} className="Abilities">
+    <Row style={{ marginTop: '52vh' }} className="Abilities">
       <h5 className="Abilities-tags">{tags}</h5>
       {abilitiesGraph}
     </Row>

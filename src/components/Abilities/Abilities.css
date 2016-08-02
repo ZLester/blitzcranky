@@ -56,12 +56,11 @@
 }
 
 .Abilities-unit-container-overlay {
-  background: repeating-linear-gradient(to right, transparent 0, transparent 8.8%, #a78735, #a78735 10%);
+  background: repeating-linear-gradient(to right, transparent 0, transparent 8.6%, #a78735, #a78735 10%);
   z-index: 1;
 }
 
 .Abilities-unit {
-
   height: 3vmin;
   position: absolute;
   margin-left: 4vmin;
