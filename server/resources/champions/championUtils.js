@@ -12,5 +12,6 @@ exports.seedChampions = () => (
 );
 
 exports.seedChampions()
+  .then(() => Champion.retrieve())
   .then(() => logger.info('Champions seeded successfully.'))
   .catch(err => logger.error(`Error seeding champions: ${err.message}`));

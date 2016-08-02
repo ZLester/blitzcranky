@@ -8,9 +8,8 @@ exports.retrieve = (req, res) => {
 };
 
 exports.update = (req, res) => {
-  Champion.delete()
-    .then(() => seedChampions())
-    .then(champions => Promise.all([champions, Champion.create(champions)]))
-    .spread(champions => res.status(201).json(champions))
+  seedChampions()
+    .then(() => Champion.retrieve())
+    .then(champions => res.status(201).json(champions))
     .catch(err => res.status(500).json({ error: err.message }));
 };
