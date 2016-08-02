@@ -3,6 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import Nav from '../Nav';
 import Header from '../Header';
 import Abilities from '../Abilities';
+import Roles from '../Roles';
 import Backgrounds from '../Backgrounds';
 import './App.css';
 
@@ -87,10 +88,9 @@ class App extends Component {
             />
           </Col>
           <Col lg={10} md={10} sm={10} xs={10} >
-            <Row>
-              <Header champion={this.state.selected} />
-              <Abilities champion={this.state.selected} />
-            </Row>
+            <Header champion={this.state.selected} />
+            <Roles champion={this.state.selected} />
+            <Abilities champion={this.state.selected} />
           </Col>
           <Backgrounds
             champions={this.state.champions}
