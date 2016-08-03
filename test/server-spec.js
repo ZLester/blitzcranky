@@ -6,7 +6,6 @@ const app = require('../server/server.js');
 chai.use(chaiHttp);
 
 describe('Server Functionality', () => {
-
   it('should exist', () => {
     expect(app).to.exist;
   });
@@ -22,7 +21,17 @@ describe('Server Functionality', () => {
         expect(err).to.equal(null);
         expect(res.status).to.equal(200);
         expect(res.ok).to.equal(true);
-        expect(res.headers['content-type']).to.equal('text/html; charset=UTF-8');
+        done();
+      });
+  });
+
+  it('should respond with an error when requesting a nonexistant route', done => {
+    chai.request(app)
+      .get('/foo')
+      .end((err, res) => {
+        expect(err).to.exist;
+        expect(res.status).to.equal(404);
+        expect(res.ok).to.equal(false);
         done();
       });
   });
