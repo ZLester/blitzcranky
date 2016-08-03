@@ -1,4 +1,5 @@
 const db = require('../../db');
+const Promise = require('bluebird');
 
 class Champion {
   create(champions) {
@@ -12,7 +13,9 @@ class Champion {
       .then(champions => champions.map(JSON.parse));
   }
   delete() {
-    return db.ltrimAsync('champions', 1, 0);
+    return this.retrieve()
+      .then(champions => Promise.all([champions, db.ltrimAsync('champions', 1, 0)]))
+      .spread(champions => champions);
   }
 }
 
